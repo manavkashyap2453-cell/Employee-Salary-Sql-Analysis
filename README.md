@@ -84,6 +84,7 @@ from employees
 group by Education_Level
 order by count(EmployeeID) desc;
 ```
+* Master> High School> Phd> Bachelor
 
 8. What is the average age and range of age in our dataset?
 ```sql
@@ -92,12 +93,17 @@ min(Age) as minimum_age,
 max(Age) as maximum_age
 from employees;
 ```
-
+* Average age: '39.7600'
+* Maximum age: 22
+* Minimum age:57
+  
 9. List down the distinct cities in our dataset
 ```sql
 select distinct(City)
 from employees;
 ```
+* Delhi, Bangalore, Hyderabad, Mumbai, Chennai
+
 10.For each department count of employees and avg monthly salary
 ```sql
 select Department,
@@ -107,6 +113,8 @@ from employees
 group by Department
 order by avg_salary desc;
 ```
+* 'Marketing' has the highest count of employees with an average salary of '96430.8462'
+* 'Operations' has the second highest count of employees with an average salary '84239.9000'
 
 11. For each department find the range and avg of experience
 ```sql
@@ -117,6 +125,10 @@ from employees
 group by Department
 order by average_experience desc;
 ```
+*'Marketing' has range of experience as '11' and has highest average experinece of '12.8462'
+* The range of experience in 'IT' is '13' which an average of '10.8000' and it is the second highest
+
+
 
 12. For each department find the count of each education level
 ```sql
@@ -125,6 +137,7 @@ from employees
 group by Department, Education_Level
 order by Department;
 ```
+
 
 13. Find details of most experienced employee
 ```sql
