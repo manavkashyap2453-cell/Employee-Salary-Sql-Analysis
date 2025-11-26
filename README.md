@@ -89,6 +89,103 @@ from employees;
 select distinct(City)
 from employees;
 ```
+10.For each department count of employees and avg monthly salary
+```sql
+select Department,
+count(EmployeeID) as employee_count,
+avg(Monthly_Salary) as avg_salary
+from employees
+group by Department
+order by avg_salary desc;
+```
+
+11. For each department find the range and avg of experience
+```sql
+select Department,
+max(Experience_Years)-min(Experience_Years) as experience_range,
+avg(Experience_Years) as average_experience
+from employees
+group by Department
+order by average_experience desc;
+```
+
+12. For each department find the count of each education level
+```sql
+select Department, Education_Level,count(EmployeeID)
+from employees
+group by Department, Education_Level
+order by Department;
+```
+
+13. Find details of most experienced employee
+```sql
+select *
+from employees
+order by Experience_Years desc limit 1;
+```
+
+14. Find details of most inexperienced employee
+```sql
+select *
+from employees
+order by Experience_Years limit 1;
+```
+
+15. Analyze education level of employees in each department in relation to salary
+```sql
+select Department,Education_Level,avg(Monthly_Salary) as average_salary
+from employees
+group by Department, Education_Level
+order by Department,average_salary desc;
+```
+
+16. Find the gender ratio in each department
+```sql
+select Department, 
+round(
+sum(case when Gender='Male' then 1 else 0 end)/
+sum(case when Gender='Female' then 1 else 0 end)
+,2) as male_to_female_ratio
+from employees
+group by Department;
+```
+
+17. Is there a trend between education level and age
+```sql
+select Education_Level,avg(Age)
+from employees
+group by Education_Level
+order by avg(Age);
+```
+
+18. Find average salary of employees in each city
+```sql
+select City, avg(Monthly_Salary)
+from employees
+group by City
+order by avg(Monthly_Salary) desc;
+```
+
+19. Is there an age bias in hiring across different cities or departments?
+```sql
+select Department, City, avg(Age)
+from employees
+group by Department, City
+order by Department;
+```
+
+20.Are certain cities more diverse in terms of gender or education?
+```sql
+select City,Education_Level,
+sum(case when Gender="Male" then 1 else 0 end) as male_employees,
+sum(case when Gender="Female" then 1 else 0 end) as female_employees
+from employees
+group by City,Education_Level
+order by City;
+```
+
+
+
 
 
 
