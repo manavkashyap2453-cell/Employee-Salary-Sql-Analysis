@@ -46,20 +46,27 @@ The dataset includes the following columns:
 ```sql
 select * from employees;
 ```
-4. Find total departments\
+4. Find total departments
 ```sql
 select Department 
 from employees
 group by Department;
 ```
+**There are 5 unique departments**
+* Marketing
+* HR
+* IT
+* Finance
+* Operations
 
 5. Find which Department has highest count
 ```sql
 select Department,count(EmployeeID)
 from employees
-group by Departmente
+group by Department
 order by count(EmployeeID) desc limit 1;
 ```
+**Marketing**
 
 6.Find the average and range of experience of employees across the data
 ```sql
@@ -67,6 +74,8 @@ select avg(Experience_Years) as average_experience,
 max(Experience_Years)-min(Experience_Years) as experienc
 from employees;
 ```
+* Average experience: '9.9000'
+* Range of experience: 19
 
 7. What are the different Education Level and order them according to their count?
 ```sql
