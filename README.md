@@ -6,7 +6,7 @@ The dataset contains information such as employee demographics, experience, educ
 The goal is to uncover insights into workforce diversity, compensation equity, and career progression, while also answering predictive and strategic questions.
 
 ---
-![image alt][]
+![imagealt](ai-generated-8876488_1280.png)
 
 ## 📂 Dataset Structure
 The dataset includes the following columns:
